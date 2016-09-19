@@ -33,6 +33,7 @@ class Less implements FilterInterface
     public function filter($contents)
     {
         $less = new \lessc();
+        $parser->SetImportDirs( [ '' => $this->_options['directory'] ] );
         $less->parse($contents);
         return $less->getCss();
     }
