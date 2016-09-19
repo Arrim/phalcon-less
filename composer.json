@@ -1,0 +1,26 @@
+{
+  "name": "arrim/phalcon-less",
+  "description": "Filter CSS content using LESS",
+  "keywords": ["phalcon", "less"],
+  "version":"0.0.1",
+  "type": "library",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Maxim Popov",
+      "email": "arrim46@gmail.com",
+      "homepage": "http://arrim.name",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.5",
+    "ext-phalcon": ">=3.0.0",
+    "oyejorge/less.php": "~1.7.0.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "Phalcon\\Assets\\Filters": "src/"
+    }
+  }
+}
