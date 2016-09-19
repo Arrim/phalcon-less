@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Phalcon\\Assets\\Filters": "src/"
+      "Phalcon\\Assets\\Filters\\": "src/"
     }
   }
 }
