@@ -4,7 +4,7 @@ namespace Phalcon\Assets\Filters;
 use \Phalcon\Assets\FilterInterface;
 
 /**
- * Filters CSS content using YUI
+ * Compile LESS to CSS
  *
  * @param string $contents
  * @return string
@@ -14,7 +14,7 @@ class Less implements FilterInterface
     protected $_options;
 
     /**
-     * CssYUICompressor constructor
+     * CssLess constructor
      *
      * @param array $options
      */
@@ -33,8 +33,10 @@ class Less implements FilterInterface
     public function filter($contents)
     {
         $less = new \lessc();
-        $parser->SetImportDirs( [ '' => $this->_options['directory'] ] );
-        $less->parse($contents);
-        return $less->getCss();
+        if(isset($this->_options['directory']))
+        {
+            $less->addImportDir( $this->_options['directory'] );
+        }
+        return $less->compile($contents);
     }
 }
